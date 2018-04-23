@@ -1,0 +1,53 @@
+%This is a configuration file for Grimm Tool 
+%Please do not change the ordering or the name of any element !
+%Put a numerical value instead of 0, lower, upper, a and z 
+% 
+% 
+%-------------------------------------------------------------
+%Number of instances for Classes 
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+Package=1
+Class=3
+Interface=2
+Variable=5
+Method=5
+Parameter=5
+Constructor=3
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%Distributions of references 
+%for distribution, Choose: Unif(a,b), Norm(mu,sigma), Expo(mu)  
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+Package/packClass->Expo(8.38)
+Package/packInter->Expo(8.08)
+Class/ownedVars->Norm(3.46,2.09)
+Class/ownedMethods->Expo(7.6)
+Class/ownedConstructors->Norm(0.73,0.26)
+Class/subtypes->Expo(0.22)
+Interface/ownedVars->Norm(3.46,2.09)
+Interface/ownedMethods->Expo(7.6)
+Method/ownedParameter->Norm(0.87,0.25)
+Constructor/ownedParameter->Norm(0.87,0.25)
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%Distributions of visibility 
+%Sum of visibilities for each property should be equal to 100
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+Attribute:public=20.41
+Attribute:private=54.46
+Attribute:protected=14.46
+Attribute:package=10.66
+Method:public=77.15
+Method:private=10.42
+Method:protected=6.06
+Method:package=6.35
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%Some others 
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+RefsBound=3
+%-------------------------------------------------------------

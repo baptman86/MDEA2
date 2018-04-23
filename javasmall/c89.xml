@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance>
+  <presentation name="?" maxConstraintArity="2" format="XCSP 2.0" />
+  <domains nbDomains="52">
+    <domain name="DC1" nbValues="1">1</domain>
+    <domain name="DC1_2" nbValues="2">0 1</domain>
+    <domain name="DC_Project" nbValues="1">1</domain>
+    <domain name="DC2" nbValues="1">2</domain>
+    <domain name="DC2_2" nbValues="3">0 2</domain>
+    <domain name="DC_Package" nbValues="2">2</domain>
+    <domain name="DC3" nbValues="1">3</domain>
+    <domain name="DC3_2" nbValues="8">0 4..10</domain>
+    <domain name="DC_PrimitiveType" nbValues="8">3..10</domain>
+    <domain name="DC4" nbValues="1">11</domain>
+    <domain name="DC4_2" nbValues="3">0 12..13</domain>
+    <domain name="DC_Class" nbValues="3">11..13</domain>
+    <domain name="DC5" nbValues="1">14</domain>
+    <domain name="DC5_2" nbValues="2">0 15..15</domain>
+    <domain name="DC_Interface" nbValues="2">14..15</domain>
+    <domain name="DC6" nbValues="1">16</domain>
+    <domain name="DC6_2" nbValues="5">0 17..20</domain>
+    <domain name="DC_Variable" nbValues="5">16..20</domain>
+    <domain name="DC7" nbValues="1">21</domain>
+    <domain name="DC7_2" nbValues="5">0 22..25</domain>
+    <domain name="DC_Method" nbValues="5">21..25</domain>
+    <domain name="DC8" nbValues="1">26</domain>
+    <domain name="DC8_2" nbValues="5">0 27..30</domain>
+    <domain name="DC_Parameter" nbValues="5">26..30</domain>
+    <domain name="DC9" nbValues="1">31</domain>
+    <domain name="DC9_2" nbValues="3">0 32..33</domain>
+    <domain name="DC_Constructor" nbValues="3">31..33</domain>
+    <domain name="DF1_1" nbValues="21">1</domain>
+    <domain name="DF2_1" nbValues="21">1</domain>
+    <domain name="DF3_1" nbValues="21">1</domain>
+    <domain name="DF4_1" nbValues="21">1</domain>
+    <domain name="DF5_1" nbValues="21">1</domain>
+    <domain name="DF6_1" nbValues="21">1</domain>
+    <domain name="DF6_2" nbValues="21">1</domain>
+    <domain name="DF7_1" nbValues="21">1</domain>
+    <domain name="DF7_2" nbValues="21">1</domain>
+    <domain name="DF8_1" nbValues="21">1</domain>
+    <domain name="DF9_1" nbValues="21">1</domain>
+    <domain name="DCRJ_1_1" nbValues="1">2..2</domain>
+    <domain name="DCRJ2_1_1" nbValues="4">2..2 34..37</domain>
+    <domain name="DCRJ_2_1" nbValues="8">3..10</domain>
+    <domain name="DCRJ2_2_1" nbValues="11">3..10 34..37</domain>
+    <domain name="DCRJ_1_4" nbValues="1">2..2</domain>
+    <domain name="DCRJ2_1_4" nbValues="4">2..2 34..37</domain>
+    <domain name="DCRJ_2_4" nbValues="3">11..13</domain>
+    <domain name="DCRJ2_2_4" nbValues="6">11..13 34..37</domain>
+    <domain name="DCRJ2_2_4_11" nbValues="5">12..13 34..37</domain>
+    <domain name="DCRJ2_2_4_12" nbValues="5">11..11 13..13 34..37</domain>
+    <domain name="DCRJ2_2_4_13" nbValues="5">11..12 34..37</domain>
+    <domain name="DCRJ_3_4" nbValues="2">14..15</domain>
+    <domain name="DCRJ2_3_4" nbValues="5">14..15 34..37</domain>
+    <domain name="DCRJ_1_5" nbValues="1">2..2</domain>
+    <domain name="DCRJ2_1_5" nbValues="4">2..2 34..37</domain>
+    <domain name="DCRJ_2_5" nbValues="2">14..15</domain>
+    <domain name="DCRJ2_2_5" nbValues="5">14..15 34..37</domain>
+    <domain name="DCRJ_1_6" nbValues="5">11..13 14..15</domain>
+    <domain name="DCRJ2_1_6" nbValues="8">11..13 14..15 34..37</domain>
+    <domain name="DCRJ_2_6" nbValues="13">3..10 11..13 14..15</domain>
+    <domain name="DCRJ2_2_6" nbValues="16">3..10 11..13 14..15 34..37</domain>
+    <domain name="DCRJ_1_7" nbValues="5">11..13 14..15</domain>
+    <domain name="DCRJ2_1_7" nbValues="8">11..13 14..15 34..37</domain>
+    <domain name="DCRJ_2_7" nbValues="13">3..10 11..13 14..15</domain>
+    <domain name="DCRJ2_2_7" nbValues="16">3..10 11..13 14..15 34..37</domain>
+    <domain name="DCRJ_1_8" nbValues="5">21..25</domain>
+    <domain name="DCRJ2_1_8" nbValues="8">21..25 34..37</domain>
+    <domain name="DCRJ_2_8" nbValues="3">31..33</domain>
+    <domain name="DCRJ2_2_8" nbValues="6">31..33 34..37</domain>
+    <domain name="DCRJ_1_9" nbValues="3">11..13</domain>
+    <domain name="DCRJ2_1_9" nbValues="6">11..13 34..37</domain>
+  </domains>
+  <variables nbVariables="105">
+    <variable domain="DF1_1" name="F_Project_1_name" />
+    <variable domain="DCRJ2_1_1" name="Id_Project_1_ownedPackages_1" />
+    <variable domain="DCRJ2_1_1" name="Id_Project_1_ownedPackages_2" />
+    <variable domain="DCRJ2_1_1" name="Id_Project_1_ownedPackages_3" />
+    <variable domain="DCRJ2_2_1" name="Id_Project_1_primitive_1" />
+    <variable domain="DCRJ2_2_1" name="Id_Project_1_primitive_2" />
+    <variable domain="DCRJ2_2_1" name="Id_Project_1_primitive_3" />
+    <variable domain="DF2_1" name="F_Package_2_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_3_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_4_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_5_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_6_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_7_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_8_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_9_name" />
+    <variable domain="DF3_1" name="F_PrimitiveType_10_name" />
+    <variable domain="DF4_1" name="F_Class_11_name" />
+    <variable domain="DCRJ2_1_4" name="Id_Class_11_classPack_1" />
+    <variable domain="DCRJ2_2_4_11" name="Id_Class_11_extends_1" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_11_implements_1" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_11_implements_2" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_11_implements_3" />
+    <variable domain="DF4_1" name="F_Class_12_name" />
+    <variable domain="DCRJ2_1_4" name="Id_Class_12_classPack_1" />
+    <variable domain="DCRJ2_2_4_12" name="Id_Class_12_extends_1" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_12_implements_1" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_12_implements_2" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_12_implements_3" />
+    <variable domain="DF4_1" name="F_Class_13_name" />
+    <variable domain="DCRJ2_1_4" name="Id_Class_13_classPack_1" />
+    <variable domain="DCRJ2_2_4_13" name="Id_Class_13_extends_1" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_13_implements_1" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_13_implements_2" />
+    <variable domain="DCRJ2_3_4" name="Id_Class_13_implements_3" />
+    <variable domain="DF5_1" name="F_Interface_14_name" />
+    <variable domain="DCRJ2_1_5" name="Id_Interface_14_interPack_1" />
+    <variable domain="DCRJ2_2_5" name="Id_Interface_14_extends_1" />
+    <variable domain="DCRJ2_2_5" name="Id_Interface_14_extends_2" />
+    <variable domain="DCRJ2_2_5" name="Id_Interface_14_extends_3" />
+    <variable domain="DF5_1" name="F_Interface_15_name" />
+    <variable domain="DCRJ2_1_5" name="Id_Interface_15_interPack_1" />
+    <variable domain="DCRJ2_2_5" name="Id_Interface_15_extends_1" />
+    <variable domain="DCRJ2_2_5" name="Id_Interface_15_extends_2" />
+    <variable domain="DCRJ2_2_5" name="Id_Interface_15_extends_3" />
+    <variable domain="DF6_1" name="F_Variable_16_name" />
+    <variable domain="DF6_2" name="F_Variable_16_visibility" />
+    <variable domain="DCRJ_1_6" name="Id_Variable_16_varClass_1" />
+    <variable domain="DCRJ_2_6" name="Id_Variable_16_varType_1" />
+    <variable domain="DF6_1" name="F_Variable_17_name" />
+    <variable domain="DF6_2" name="F_Variable_17_visibility" />
+    <variable domain="DCRJ_1_6" name="Id_Variable_17_varClass_1" />
+    <variable domain="DCRJ_2_6" name="Id_Variable_17_varType_1" />
+    <variable domain="DF6_1" name="F_Variable_18_name" />
+    <variable domain="DF6_2" name="F_Variable_18_visibility" />
+    <variable domain="DCRJ_1_6" name="Id_Variable_18_varClass_1" />
+    <variable domain="DCRJ_2_6" name="Id_Variable_18_varType_1" />
+    <variable domain="DF6_1" name="F_Variable_19_name" />
+    <variable domain="DF6_2" name="F_Variable_19_visibility" />
+    <variable domain="DCRJ_1_6" name="Id_Variable_19_varClass_1" />
+    <variable domain="DCRJ_2_6" name="Id_Variable_19_varType_1" />
+    <variable domain="DF6_1" name="F_Variable_20_name" />
+    <variable domain="DF6_2" name="F_Variable_20_visibility" />
+    <variable domain="DCRJ_1_6" name="Id_Variable_20_varClass_1" />
+    <variable domain="DCRJ_2_6" name="Id_Variable_20_varType_1" />
+    <variable domain="DF7_1" name="F_Method_21_name" />
+    <variable domain="DF7_2" name="F_Method_21_visibility" />
+    <variable domain="DCRJ_1_7" name="Id_Method_21_methodClass_1" />
+    <variable domain="DCRJ_2_7" name="Id_Method_21_returnType_1" />
+    <variable domain="DF7_1" name="F_Method_22_name" />
+    <variable domain="DF7_2" name="F_Method_22_visibility" />
+    <variable domain="DCRJ_1_7" name="Id_Method_22_methodClass_1" />
+    <variable domain="DCRJ_2_7" name="Id_Method_22_returnType_1" />
+    <variable domain="DF7_1" name="F_Method_23_name" />
+    <variable domain="DF7_2" name="F_Method_23_visibility" />
+    <variable domain="DCRJ_1_7" name="Id_Method_23_methodClass_1" />
+    <variable domain="DCRJ_2_7" name="Id_Method_23_returnType_1" />
+    <variable domain="DF7_1" name="F_Method_24_name" />
+    <variable domain="DF7_2" name="F_Method_24_visibility" />
+    <variable domain="DCRJ_1_7" name="Id_Method_24_methodClass_1" />
+    <variable domain="DCRJ_2_7" name="Id_Method_24_returnType_1" />
+    <variable domain="DF7_1" name="F_Method_25_name" />
+    <variable domain="DF7_2" name="F_Method_25_visibility" />
+    <variable domain="DCRJ_1_7" name="Id_Method_25_methodClass_1" />
+    <variable domain="DCRJ_2_7" name="Id_Method_25_returnType_1" />
+    <variable domain="DF8_1" name="F_Parameter_26_name" />
+    <variable domain="DCRJ2_1_8" name="Id_Parameter_26_parMeth_1" />
+    <variable domain="DCRJ2_2_8" name="Id_Parameter_26_parConstr_1" />
+    <variable domain="DF8_1" name="F_Parameter_27_name" />
+    <variable domain="DCRJ2_1_8" name="Id_Parameter_27_parMeth_1" />
+    <variable domain="DCRJ2_2_8" name="Id_Parameter_27_parConstr_1" />
+    <variable domain="DF8_1" name="F_Parameter_28_name" />
+    <variable domain="DCRJ2_1_8" name="Id_Parameter_28_parMeth_1" />
+    <variable domain="DCRJ2_2_8" name="Id_Parameter_28_parConstr_1" />
+    <variable domain="DF8_1" name="F_Parameter_29_name" />
+    <variable domain="DCRJ2_1_8" name="Id_Parameter_29_parMeth_1" />
+    <variable domain="DCRJ2_2_8" name="Id_Parameter_29_parConstr_1" />
+    <variable domain="DF8_1" name="F_Parameter_30_name" />
+    <variable domain="DCRJ2_1_8" name="Id_Parameter_30_parMeth_1" />
+    <variable domain="DCRJ2_2_8" name="Id_Parameter_30_parConstr_1" />
+    <variable domain="DF9_1" name="F_Constructor_31_visibility" />
+    <variable domain="DCRJ2_1_9" name="Id_Constructor_31_constructorClass_1" />
+    <variable domain="DF9_1" name="F_Constructor_32_visibility" />
+    <variable domain="DCRJ2_1_9" name="Id_Constructor_32_constructorClass_1" />
+    <variable domain="DF9_1" name="F_Constructor_33_visibility" />
+    <variable domain="DCRJ2_1_9" name="Id_Constructor_33_constructorClass_1" />
+  </variables>
+  <predicates nbPredicates="1">
+    <predicate name="inf">
+      <parameters>int v1 int v2</parameters>
+      <expression>
+        <functional>lt(v1,v2)</functional>
+      </expression>
+    </predicate>
+  </predicates>
+  <constraints nbConstraints="12">
+    <constraint name="ConsId_Class_11_extends_1 11" arity="1" scope="Id_Class_11_extends_1 " reference="inf">
+      <parameters>11 Id_Class_11_extends_1</parameters>
+    </constraint>
+    <constraint name="ConsId_Class_12_extends_1 12" arity="1" scope="Id_Class_12_extends_1 " reference="inf">
+      <parameters>12 Id_Class_12_extends_1</parameters>
+    </constraint>
+    <constraint name="ConsId_Class_13_extends_1 13" arity="1" scope="Id_Class_13_extends_1 " reference="inf">
+      <parameters>13 Id_Class_13_extends_1</parameters>
+    </constraint>
+    <constraint name="classPack_packClass" arity="3" scope="Id_Class_11_classPack_1 Id_Class_12_classPack_1 Id_Class_13_classPack_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Class_11_classPack_1 Id_Class_12_classPack_1 Id_Class_13_classPack_1 ] [ 2 ] [ 0 ] [ 10 ]</parameters>
+    </constraint>
+    <constraint name="interPack_packInter" arity="2" scope="Id_Interface_14_interPack_1 Id_Interface_15_interPack_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Interface_14_interPack_1 Id_Interface_15_interPack_1 ] [ 2 ] [ 0 ] [ 5 ]</parameters>
+    </constraint>
+    <constraint name="varClass_ownedVars" arity="5" scope="Id_Variable_16_varClass_1 Id_Variable_17_varClass_1 Id_Variable_18_varClass_1 Id_Variable_19_varClass_1 Id_Variable_20_varClass_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Variable_16_varClass_1 Id_Variable_17_varClass_1 Id_Variable_18_varClass_1 Id_Variable_19_varClass_1 Id_Variable_20_varClass_1 ] [ 11 12 13 14 15 ] [ 0 0 0 0 0 ] [ 8 0 3 3 3 ]</parameters>
+    </constraint>
+    <constraint name="methodClass_ownedMethods" arity="5" scope="Id_Method_21_methodClass_1 Id_Method_22_methodClass_1 Id_Method_23_methodClass_1 Id_Method_24_methodClass_1 Id_Method_25_methodClass_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Method_21_methodClass_1 Id_Method_22_methodClass_1 Id_Method_23_methodClass_1 Id_Method_24_methodClass_1 Id_Method_25_methodClass_1 ] [ 11 12 13 14 15 ] [ 0 0 0 0 0 ] [ 2 6 5 11 6 ]</parameters>
+    </constraint>
+    <constraint name="parMeth_ownedParameter" arity="5" scope="Id_Parameter_26_parMeth_1 Id_Parameter_27_parMeth_1 Id_Parameter_28_parMeth_1 Id_Parameter_29_parMeth_1 Id_Parameter_30_parMeth_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Parameter_26_parMeth_1 Id_Parameter_27_parMeth_1 Id_Parameter_28_parMeth_1 Id_Parameter_29_parMeth_1 Id_Parameter_30_parMeth_1 ] [ 21 22 23 24 25 ] [ 0 0 0 0 0 ] [ 0 1 1 1 1 ]</parameters>
+    </constraint>
+    <constraint name="parConstr_ownedParameter" arity="5" scope="Id_Parameter_26_parConstr_1 Id_Parameter_27_parConstr_1 Id_Parameter_28_parConstr_1 Id_Parameter_29_parConstr_1 Id_Parameter_30_parConstr_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Parameter_26_parConstr_1 Id_Parameter_27_parConstr_1 Id_Parameter_28_parConstr_1 Id_Parameter_29_parConstr_1 Id_Parameter_30_parConstr_1 ] [ 31 32 33 ] [ 0 0 0 ] [ 1 0 1 ]</parameters>
+    </constraint>
+    <constraint name="constructorClass_ownedConstructors" arity="3" scope="Id_Constructor_31_constructorClass_1 Id_Constructor_32_constructorClass_1 Id_Constructor_33_constructorClass_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Constructor_31_constructorClass_1 Id_Constructor_32_constructorClass_1 Id_Constructor_33_constructorClass_1 ] [ 11 12 13 ] [ 0 0 0 ] [ 1 1 1 ]</parameters>
+    </constraint>
+    <constraint name="AllClassGCCs" arity="3" scope="Id_Class_11_extends_1 Id_Class_12_extends_1 Id_Class_13_extends_1 " reference="global:globalCardinality">
+      <parameters>[ Id_Class_11_extends_1 Id_Class_12_extends_1 Id_Class_13_extends_1 ] [  11 12 13 ] [ 0 0 0 ] [ 1 0 0 ]</parameters>
+    </constraint>
+    <constraint name="AllInterfaceGCC" arity="15" scope="Id_Class_11_implements_1 Id_Class_11_implements_2 Id_Class_11_implements_3 Id_Class_12_implements_1 Id_Class_12_implements_2 Id_Class_12_implements_3 Id_Class_13_implements_1 Id_Class_13_implements_2 Id_Class_13_implements_3 Id_Interface_14_extends_1 Id_Interface_14_extends_2 Id_Interface_14_extends_3 Id_Interface_15_extends_1 Id_Interface_15_extends_2 Id_Interface_15_extends_3 " reference="global:globalCardinality">
+      <parameters>[ Id_Class_11_implements_1 Id_Class_11_implements_2 Id_Class_11_implements_3 Id_Class_12_implements_1 Id_Class_12_implements_2 Id_Class_12_implements_3 Id_Class_13_implements_1 Id_Class_13_implements_2 Id_Class_13_implements_3 Id_Interface_14_extends_1 Id_Interface_14_extends_2 Id_Interface_14_extends_3 Id_Interface_15_extends_1 Id_Interface_15_extends_2 Id_Interface_15_extends_3 ] [  14 15 ] [ 0 0 ] [ 0 1 ]</parameters>
+    </constraint>
+  </constraints>
+</instance>

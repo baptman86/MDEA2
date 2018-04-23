@@ -1,0 +1,34 @@
+
+real	2m47.502s
+user	5m49.486s
+sys	0m41.750s
+	# current convergence
+0	# number of selections since initialization
+150	# number of crossovers since initialization
+3026	# number of mutations since initialization
+0	# number of replacements since initialization
+50	# number of genome evaluations since initialization
+0	# number of population evaluations since initialization
+25	# maximum score since initialization
+1	# minimum score since initialization
+3.06	# average of all scores ('on-line' performance)
+20.6667	# average of maximum scores ('off-line' performance)
+1	# average of minimum scores ('off-line' performance)
+
+1.62	# mean score in initial population
+2	# maximum score in initial population
+1	# minimum score in initial population
+0.490314	# standard deviation of initial population
+-1	# diversity of initial population (0=identical,-1=unset)
+
+3.54	# mean score in current population
+18	# maximum score in current population
+1	# minimum score in current population
+5.03543	# standard deviation of current population
+-1	# diversity of current population (0=identical,-1=unset)
+
+100	# how far back to look for convergence
+1	# how often to record scores
+10	# how often to write scores to file
+output-scaffold-inter-levenshtein--3-0.1-2/stat	# name of file to which scores are written
+

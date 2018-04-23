@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myjava" nsURI="http://myjava/1.0" nsPrefix="myjava">
+  <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPackages" lowerBound="1"
+        upperBound="-1" eType="#//Package" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primitive" upperBound="-1"
+        eType="#//PrimitiveType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packClass" upperBound="-1"
+        eType="#//Class" containment="true" eOpposite="#//Class/classPack"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packInter" upperBound="-1"
+        eType="#//Interface" containment="true" eOpposite="#//Interface/interPack"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVars" upperBound="-1"
+        eType="#//Variable" containment="true" eOpposite="#//Variable/varClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedMethods" upperBound="-1"
+        eType="#//Method" containment="true" eOpposite="#//Method/methodClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classPack" lowerBound="1"
+        eType="#//Package" eOpposite="#//Package/packClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
+        eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConstructors" upperBound="-1"
+        eType="#//Constructor" containment="true" eOpposite="#//Constructor/constructorClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interPack" lowerBound="1"
+        eType="#//Package" eOpposite="#//Package/packInter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
+        eType="#//Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varClass" lowerBound="1"
+        eType="#//Classifier" eOpposite="#//Classifier/ownedVars"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varType" lowerBound="1"
+        eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodClass" lowerBound="1"
+        eType="#//Classifier" eOpposite="#//Classifier/ownedMethods"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
+        eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameter" upperBound="-1"
+        eType="#//Parameter" containment="true" eOpposite="#//Parameter/parMeth"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VisibilityKind">
+    <eLiterals name="public"/>
+    <eLiterals name="private" value="1"/>
+    <eLiterals name="package" value="2"/>
+    <eLiterals name="protected" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parMeth" lowerBound="1"
+        eType="#//Method" eOpposite="#//Method/ownedParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parConstr" lowerBound="1"
+        eType="#//Constructor" eOpposite="#//Constructor/ownedParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constructor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructorClass" lowerBound="1"
+        eType="#//Class" eOpposite="#//Class/ownedConstructors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameter" upperBound="-1"
+        eType="#//Parameter" containment="true" eOpposite="#//Parameter/parConstr"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityKind"/>
+  </eClassifiers>
+</ecore:EPackage>

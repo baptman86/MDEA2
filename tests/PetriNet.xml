@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance>
+  <presentation name="?" maxConstraintArity="2" format="XCSP 2.0" />
+  <domains nbDomains="21">
+    <domain name="DC1" nbValues="1">1</domain>
+    <domain name="DC1_2" nbValues="2">0 1</domain>
+    <domain name="DC_PetriNet" nbValues="1">1</domain>
+    <domain name="DC2" nbValues="1">2</domain>
+    <domain name="DC2_2" nbValues="15">0 3..16</domain>
+    <domain name="DC_Arc" nbValues="15">2..16</domain>
+    <domain name="DC3" nbValues="1">17</domain>
+    <domain name="DC3_2" nbValues="12">0 18..28</domain>
+    <domain name="DC_Transition" nbValues="12">17..28</domain>
+    <domain name="DC4" nbValues="1">29</domain>
+    <domain name="DC4_2" nbValues="10">0 30..38</domain>
+    <domain name="DC_Place" nbValues="10">29..38</domain>
+    <domain name="DF1_1" nbValues="7">1..2</domain>
+    <domain name="DF2_1" nbValues="7">1..2</domain>
+    <domain name="DF3_1" nbValues="7">1..2</domain>
+    <domain name="DF4_1" nbValues="7">1..2</domain>
+    <domain name="DF4_2" nbValues="7">1..2</domain>
+    <domain name="DCRJ_1_1" nbValues="22">17..28 29..38</domain>
+    <domain name="DCRJ2_1_1" nbValues="28">17..28 29..38 39..45</domain>
+    <domain name="DCRJ_2_1" nbValues="15">2..16</domain>
+    <domain name="DCRJ2_2_1" nbValues="21">2..16 39..45</domain>
+    <domain name="DCRJ_1_2" nbValues="22">17..28 29..38</domain>
+    <domain name="DCRJ2_1_2" nbValues="28">17..28 29..38 39..45</domain>
+    <domain name="DCRJ_2_2" nbValues="22">17..28 29..38</domain>
+    <domain name="DCRJ2_2_2" nbValues="28">17..28 29..38 39..45</domain>
+  </domains>
+  <variables nbVariables="90">
+    <variable domain="DF1_1" name="F_PetriNet_1_name" />
+    <variable domain="DCRJ2_1_1" name="Id_PetriNet_1_nodes_1" />
+    <variable domain="DCRJ2_1_1" name="Id_PetriNet_1_nodes_2" />
+    <variable domain="DCRJ2_1_1" name="Id_PetriNet_1_nodes_3" />
+    <variable domain="DCRJ2_1_1" name="Id_PetriNet_1_nodes_4" />
+    <variable domain="DCRJ2_1_1" name="Id_PetriNet_1_nodes_5" />
+    <variable domain="DCRJ2_1_1" name="Id_PetriNet_1_nodes_6" />
+    <variable domain="DCRJ2_2_1" name="Id_PetriNet_1_arcs_1" />
+    <variable domain="DCRJ2_2_1" name="Id_PetriNet_1_arcs_2" />
+    <variable domain="DCRJ2_2_1" name="Id_PetriNet_1_arcs_3" />
+    <variable domain="DCRJ2_2_1" name="Id_PetriNet_1_arcs_4" />
+    <variable domain="DCRJ2_2_1" name="Id_PetriNet_1_arcs_5" />
+    <variable domain="DCRJ2_2_1" name="Id_PetriNet_1_arcs_6" />
+    <variable domain="DF2_1" name="F_Arc_2_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_2_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_2_target_1" />
+    <variable domain="DF2_1" name="F_Arc_3_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_3_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_3_target_1" />
+    <variable domain="DF2_1" name="F_Arc_4_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_4_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_4_target_1" />
+    <variable domain="DF2_1" name="F_Arc_5_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_5_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_5_target_1" />
+    <variable domain="DF2_1" name="F_Arc_6_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_6_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_6_target_1" />
+    <variable domain="DF2_1" name="F_Arc_7_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_7_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_7_target_1" />
+    <variable domain="DF2_1" name="F_Arc_8_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_8_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_8_target_1" />
+    <variable domain="DF2_1" name="F_Arc_9_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_9_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_9_target_1" />
+    <variable domain="DF2_1" name="F_Arc_10_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_10_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_10_target_1" />
+    <variable domain="DF2_1" name="F_Arc_11_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_11_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_11_target_1" />
+    <variable domain="DF2_1" name="F_Arc_12_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_12_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_12_target_1" />
+    <variable domain="DF2_1" name="F_Arc_13_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_13_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_13_target_1" />
+    <variable domain="DF2_1" name="F_Arc_14_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_14_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_14_target_1" />
+    <variable domain="DF2_1" name="F_Arc_15_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_15_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_15_target_1" />
+    <variable domain="DF2_1" name="F_Arc_16_weight" />
+    <variable domain="DCRJ_1_2" name="Id_Arc_16_source_1" />
+    <variable domain="DCRJ_2_2" name="Id_Arc_16_target_1" />
+    <variable domain="DF3_1" name="F_Transition_17_name" />
+    <variable domain="DF3_1" name="F_Transition_18_name" />
+    <variable domain="DF3_1" name="F_Transition_19_name" />
+    <variable domain="DF3_1" name="F_Transition_20_name" />
+    <variable domain="DF3_1" name="F_Transition_21_name" />
+    <variable domain="DF3_1" name="F_Transition_22_name" />
+    <variable domain="DF3_1" name="F_Transition_23_name" />
+    <variable domain="DF3_1" name="F_Transition_24_name" />
+    <variable domain="DF3_1" name="F_Transition_25_name" />
+    <variable domain="DF3_1" name="F_Transition_26_name" />
+    <variable domain="DF3_1" name="F_Transition_27_name" />
+    <variable domain="DF3_1" name="F_Transition_28_name" />
+    <variable domain="DF4_1" name="F_Place_29_name" />
+    <variable domain="DF4_2" name="F_Place_29_marking" />
+    <variable domain="DF4_1" name="F_Place_30_name" />
+    <variable domain="DF4_2" name="F_Place_30_marking" />
+    <variable domain="DF4_1" name="F_Place_31_name" />
+    <variable domain="DF4_2" name="F_Place_31_marking" />
+    <variable domain="DF4_1" name="F_Place_32_name" />
+    <variable domain="DF4_2" name="F_Place_32_marking" />
+    <variable domain="DF4_1" name="F_Place_33_name" />
+    <variable domain="DF4_2" name="F_Place_33_marking" />
+    <variable domain="DF4_1" name="F_Place_34_name" />
+    <variable domain="DF4_2" name="F_Place_34_marking" />
+    <variable domain="DF4_1" name="F_Place_35_name" />
+    <variable domain="DF4_2" name="F_Place_35_marking" />
+    <variable domain="DF4_1" name="F_Place_36_name" />
+    <variable domain="DF4_2" name="F_Place_36_marking" />
+    <variable domain="DF4_1" name="F_Place_37_name" />
+    <variable domain="DF4_2" name="F_Place_37_marking" />
+    <variable domain="DF4_1" name="F_Place_38_name" />
+    <variable domain="DF4_2" name="F_Place_38_marking" />
+  </variables>
+  <predicates nbPredicates="1">
+    <predicate name="inf">
+      <parameters>int v1 int v2</parameters>
+      <expression>
+        <functional>lt(v1,v2)</functional>
+      </expression>
+    </predicate>
+  </predicates>
+  <constraints nbConstraints="0" />
+</instance>
