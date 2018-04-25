@@ -207,22 +207,10 @@ std::vector<MatrixPtr> GAChromosom::evaluate(GAGenome& g) {
     for(auto m2 = m1 + 1; m2 < end; m2++) {
       if(*m1 != *m2) {
 				if(GAChromosom::method & GAChromosom::Method::LEVENSHTEIN){
-					//génére les fichiers dot
-					auto fut1 = std::async(std::launch::async,&Model::generateDotFile,m1,0);
-					auto fut2 = std::async(std::launch::async,&Model::generateDotFile,m2,1);
 					levenshtein->set(i,j,Model::levenshteinDistance(*m1,*m2));
-					//attendre la fin de l'exécution des threads avant de passer à la suite
-					fut1.get();
-					fut2.get();
 				}
 				if(GAChromosom::method & GAChromosom::Method::COSINE){
-					//génére les fichiers dot
-					auto fut1 = std::async(std::launch::async,&Model::generateDotFile,m1,0);
-					auto fut2 = std::async(std::launch::async,&Model::generateDotFile,m2,1);
 					cosine->set(i,j,Model::cosineDistance(*m1,*m2));
-					//attendre la fin de l'exécution des threads avant de passer à la suite
-					fut1.get();
-					fut2.get();
 				}
 				if((GAChromosom::method & GAChromosom::Method::HAMMING) ||(GAChromosom::method & GAChromosom::Method::CENTRALITY) ||(GAChromosom::method & GAChromosom::Method::LEVEXTERN)) {
 					auto res = Model::evaluateExtern(*m1,*m2);

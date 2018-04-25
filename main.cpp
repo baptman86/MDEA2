@@ -39,6 +39,7 @@
 #include "model/GAChromosom.h"
 #include "model/NSGAII.h"
 #include "model/Population.h"
+#include "model/Model.h"
 #include "utils/CommandLine.h"
 #include <sys/stat.h>
 #include <cstdio>
@@ -46,8 +47,13 @@
 
 using namespace std;
 
-int main(int argc, char* argv[]) {
+int main2(int argc, char* argv[]) {
+	Model m("tmp0");
+	m.generateDotFile(1);
+	return 0;
+}
 
+int main(int argc, char* argv[]) {
   /* Configure CLI */
   CommandLine cl("mdea");
   cl.addOption("-in","-in <models directory>");
@@ -60,6 +66,7 @@ int main(int argc, char* argv[]) {
   cl.addOption("-g","-g <number of generations>",false);
   cl.addOption("-cx","-cx <inter|intra>",false);
   cl.addOption("-fitness","-fitness <min|avg|minavg|minavgs|dist>",false);
+  cl.addOption("-freq","<dot files generation frequency in addition to the last generation, 0 = no other generation>");
 
   /* Parse CLI input */
   auto opt = cl.parse(argc,argv);
@@ -142,7 +149,6 @@ int main(int argc, char* argv[]) {
   mkdir(NSGAII::dir.c_str(),0777);
   mkdir((NSGAII::dir+"/jvmconsuption").c_str(),0777);
   mkdir((NSGAII::dir+"/output").c_str(),0777);
-	mkdir((NSGAII::dir+"/output/dotgen"+std::to_string(NSGAII::gen)).c_str(),0777);
   
   std::ostringstream oss;
   oss << NSGAII::dir << "/stat";
@@ -180,6 +186,15 @@ int main(int argc, char* argv[]) {
 	std::cout << ga << std::endl;
   // do the evolution
   ga.evolve();
+  
+  //generate all dot files
+  if(std::stoi(opt->at("-freq"))>0){
+		for(int i =1; i<=NSGAII::maxGen; i++){
+			if((i % (std::stoi(opt->at("-freq")))==0) || NSGAII::gen==NSGAII::maxGen){
+				ga.generateDotGen(opt->at("-in"),i);
+			}
+		}
+  }
 
   // print out the results
   cout << ga.statistics() << endl;

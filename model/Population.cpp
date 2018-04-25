@@ -25,7 +25,7 @@ Population::Population(std::string dirPath): Population() {
   int nbt = d.getNbFiles(".chr");
 
   //doesnt use all model if (nbt % Chromosom::getNbModels() != 0)
-  int nbFilesUsed = nbt - (nbt % Chromosom::getNbModels());
+  int nbFilesUsed = nbt;// - (nbt % Chromosom::getNbModels());
   
   //force use of all model
   /*if(d.getNbFiles(".chr") % Chromosom::getNbModels() != 0) {

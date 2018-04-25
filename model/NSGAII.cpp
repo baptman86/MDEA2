@@ -20,6 +20,7 @@
 #include <limits>
 #include <chrono>
 #include <sys/stat.h>
+#include <fstream>
 
 int NSGAII::fitness = NSGAII::Fitness::AVG;
 std::string NSGAII::dir = "default";
@@ -444,6 +445,62 @@ void NSGAII::step() {
     Logger l(outfile);
     l << extraStats;
   }
+}
+
+void NSGAII::generateDotGen(std::string metaModelName, int genNumber){
+	  std::ifstream file(NSGAII::dir+"/output/gen"+std::to_string(genNumber));
+	  if(file){
+	      std::string line;
+	      int vectorNumber=0;
+
+	      while(getline(file, line)){
+	          if(isdigit(line[0])){
+	          		std::string outputDir = NSGAII::dir+"/output/dotgen"+std::to_string(genNumber).c_str();
+	          		
+	          		std::string outputPath = outputDir+"/c"+std::to_string(vectorNumber).c_str()+".chr";
+	              std::ofstream output(outputPath);
+	              output << line << std::endl;
+								std::string metaModel = metaModelName+"/c"+std::to_string(vectorNumber)+".xml";
+								std::string grimm = "";
+								std::string ecore = "";
+								std::string dir = "";
+								if(metaModelName == "scaffold"){
+									grimm = "Graph.grimm";
+									ecore = "ScaffoldGraph.ecore";
+									dir = "Graph";
+								}
+								if(metaModelName == "javasmall"){
+										grimm = "ProjectSmall.grimm";
+										ecore = "MyJava.ecore";
+										dir = "Project";
+								}
+								if(grimm == ""){
+									std::cout << "meta-model need to be scaffold or javasmall" << std::endl;
+								}
+								else{
+									mkdir(outputDir.c_str(),0777);
+									output << metaModel << std::endl;
+									output << grimm << std::endl;
+									output << ecore << std::endl;
+									output << dir << std::endl;
+			            output.close();
+									Model m(outputPath);
+									std::string dotFilePath = m.generateDotFile(0);
+									std::string rawfileName = dotFilePath.substr(dotFilePath.find("/"),dotFilePath.length());
+									system(("mv "+dotFilePath+" "+outputDir).c_str());
+									
+									std::string s0 = outputDir+"/"+rawfileName;
+									std::string s1 = outputDir+"/c"+std::to_string(vectorNumber).c_str()+".dot";
+									
+									rename(s0.c_str(),s1.c_str());
+									vectorNumber++;
+								}
+	          }
+	      }
+	  } else {
+	      std::cout << "Could not open the target file" << std::endl;
+	  }
+	  file.close();
 }
 
 NSGAII& NSGAII::operator++() {

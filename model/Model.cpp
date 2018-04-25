@@ -122,6 +122,9 @@ DomainsPtr Model::getDomains() const {
 std::string Model::generateDotFile(int i) {
   if(!change) return dot;
   change = false;
+	//std::string outdirGen = NSGAII::dir+"/output/dotgen"+std::to_string(NSGAII::gen);
+  std::string outfileChrono = NSGAII::dir+"/jvmconsuption/jvmconsuption"+std::to_string(NSGAII::gen);
+
   if(dot != "") {
     auto cmd = "rm "+dot;
     system(cmd.c_str());
@@ -188,12 +191,11 @@ std::string Model::generateDotFile(int i) {
   pclose(in);
   //  std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
 	//std::cout << fileName << std::endl;
-	std::string outdirGen = NSGAII::dir+"/output/dotgen"+std::to_string(NSGAII::gen);
-	system(("mv "+fileName+" "+outdirGen).c_str());
-	std::string rawfileName = fileName.substr(fileName.find("/"),fileName.length());
-  dot = outdirGen+rawfileName;
+	//system(("mv "+fileName+" "+outdirGen).c_str());
+	//std::string rawfileName = fileName.substr(fileName.find("/"),fileName.length());
+  //dot = outdirGen+rawfileName;
   //auto t2 = std::chrono::high_resolution_clock::now();
-  auto outfileChrono = NSGAII::dir+"/jvmconsuption/jvmconsuption"+std::to_string(NSGAII::gen);
+	dot = fileName;
 
 	//display of dot file and corresponding values
 	//std::cout << dot << std::endl << *this << std::endl;
