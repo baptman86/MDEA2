@@ -258,7 +258,6 @@ void NSGAII::clustering(::Population* popr,
 void NSGAII::step() {
   // Initialization of the generation
   gen++;
-	mkdir((NSGAII::dir+"/output/dotgen"+std::to_string(gen)).c_str(),0777);
   auto t1 = std::chrono::high_resolution_clock::now();
   std::cout<<gen;
   std::cout.flush();
@@ -447,29 +446,28 @@ void NSGAII::step() {
   }
 }
 
-void NSGAII::generateDotGen(std::string metaModelName, int genNumber){
-	  std::ifstream file(NSGAII::dir+"/output/gen"+std::to_string(genNumber));
+void NSGAII::generateDotGen(std::string metaModelDir, std::string genFile, std::string outputDir){
+	  std::ifstream file(genFile);
 	  if(file){
 	      std::string line;
 	      int vectorNumber=0;
 
 	      while(getline(file, line)){
 	          if(isdigit(line[0])){
-	          		std::string outputDir = NSGAII::dir+"/output/dotgen"+std::to_string(genNumber).c_str();
-	          		
+								mkdir(outputDir.c_str(),0777);
 	          		std::string outputPath = outputDir+"/c"+std::to_string(vectorNumber).c_str()+".chr";
 	              std::ofstream output(outputPath);
 	              output << line << std::endl;
-								std::string metaModel = metaModelName+"/c"+std::to_string(vectorNumber)+".xml";
+								std::string metaModel = metaModelDir+"/c"+std::to_string(vectorNumber)+".xml";
 								std::string grimm = "";
 								std::string ecore = "";
 								std::string dir = "";
-								if(metaModelName == "scaffold"){
+								if(metaModelDir == "scaffold"){
 									grimm = "Graph.grimm";
 									ecore = "ScaffoldGraph.ecore";
 									dir = "Graph";
 								}
-								if(metaModelName == "javasmall"){
+								if(metaModelDir == "javasmall"){
 										grimm = "ProjectSmall.grimm";
 										ecore = "MyJava.ecore";
 										dir = "Project";
@@ -478,7 +476,6 @@ void NSGAII::generateDotGen(std::string metaModelName, int genNumber){
 									std::cout << "meta-model need to be scaffold or javasmall" << std::endl;
 								}
 								else{
-									mkdir(outputDir.c_str(),0777);
 									output << metaModel << std::endl;
 									output << grimm << std::endl;
 									output << ecore << std::endl;

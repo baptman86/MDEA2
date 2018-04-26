@@ -129,7 +129,7 @@ class NSGAII : public GASimpleGA {
   /**
    * Create dot files associate to a generation
    */
-  virtual void generateDotGen(std::string metaModelName, int genNumber);
+  virtual void generateDotGen(std::string metaModelName, std::string genFile, std::string outputDir);
   /**
    * Operator that create a new generation.
    * \return The NSGA-II algorithm with a new population.

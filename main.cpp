@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
   cl.addOption("-g","-g <number of generations>",false);
   cl.addOption("-cx","-cx <inter|intra>",false);
   cl.addOption("-fitness","-fitness <min|avg|minavg|minavgs|dist>",false);
-  cl.addOption("-freq","<dot files generation frequency in addition to the last generation, 0 = no other generation>");
+  cl.addOption("-freq","<dot files generation frequency in addition to the last generation, 0 = only last generation>, -1 = no generation",false);
 
   /* Parse CLI input */
   auto opt = cl.parse(argc,argv);
@@ -187,13 +187,24 @@ int main(int argc, char* argv[]) {
   // do the evolution
   ga.evolve();
   
+  
+  
   //generate all dot files
-  if(std::stoi(opt->at("-freq"))>0){
+  
+  int frequency = -1;
+  if(opt->at("-freq") != ""){
+  	frequency = std::stoi(opt->at("-freq"));
+  }
+  
+  if(frequency>0){
 		for(int i =1; i<=NSGAII::maxGen; i++){
 			if((i % (std::stoi(opt->at("-freq")))==0) || NSGAII::gen==NSGAII::maxGen){
-				ga.generateDotGen(opt->at("-in"),i);
+				ga.generateDotGen(opt->at("-in"),NSGAII::dir+"/output/gen"+std::to_string(i),NSGAII::dir+"/output/dotgen"+std::to_string(i));
 			}
 		}
+  }
+  if(frequency==0){
+  	ga.generateDotGen(opt->at("-in"),NSGAII::dir+"/output/gen"+std::to_string(NSGAII::maxGen),NSGAII::dir+"/output/dotgen"+std::to_string(NSGAII::maxGen));
   }
 
   // print out the results

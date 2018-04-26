@@ -198,16 +198,16 @@
       <parameters>13 Id_Class_13_extends_1</parameters>
     </constraint>
     <constraint name="classPack_packClass" arity="3" scope="Id_Class_11_classPack_1 Id_Class_12_classPack_1 Id_Class_13_classPack_1 " reference="global:globalCardinality">
-      <parameters>[ Id_Class_11_classPack_1 Id_Class_12_classPack_1 Id_Class_13_classPack_1 ] [ 2 ] [ 0 ] [ 2 ]</parameters>
+      <parameters>[ Id_Class_11_classPack_1 Id_Class_12_classPack_1 Id_Class_13_classPack_1 ] [ 2 ] [ 0 ] [ 13 ]</parameters>
     </constraint>
     <constraint name="interPack_packInter" arity="2" scope="Id_Interface_14_interPack_1 Id_Interface_15_interPack_1 " reference="global:globalCardinality">
-      <parameters>[ Id_Interface_14_interPack_1 Id_Interface_15_interPack_1 ] [ 2 ] [ 0 ] [ 1 ]</parameters>
+      <parameters>[ Id_Interface_14_interPack_1 Id_Interface_15_interPack_1 ] [ 2 ] [ 0 ] [ 10 ]</parameters>
     </constraint>
     <constraint name="varClass_ownedVars" arity="5" scope="Id_Variable_16_varClass_1 Id_Variable_17_varClass_1 Id_Variable_18_varClass_1 Id_Variable_19_varClass_1 Id_Variable_20_varClass_1 " reference="global:globalCardinality">
-      <parameters>[ Id_Variable_16_varClass_1 Id_Variable_17_varClass_1 Id_Variable_18_varClass_1 Id_Variable_19_varClass_1 Id_Variable_20_varClass_1 ] [ 11 12 13 14 15 ] [ 0 0 0 0 0 ] [ 3 4 6 3 1 ]</parameters>
+      <parameters>[ Id_Variable_16_varClass_1 Id_Variable_17_varClass_1 Id_Variable_18_varClass_1 Id_Variable_19_varClass_1 Id_Variable_20_varClass_1 ] [ 11 12 13 14 15 ] [ 0 0 0 0 0 ] [ 2 3 3 3 4 ]</parameters>
     </constraint>
     <constraint name="methodClass_ownedMethods" arity="5" scope="Id_Method_21_methodClass_1 Id_Method_22_methodClass_1 Id_Method_23_methodClass_1 Id_Method_24_methodClass_1 Id_Method_25_methodClass_1 " reference="global:globalCardinality">
-      <parameters>[ Id_Method_21_methodClass_1 Id_Method_22_methodClass_1 Id_Method_23_methodClass_1 Id_Method_24_methodClass_1 Id_Method_25_methodClass_1 ] [ 11 12 13 14 15 ] [ 0 0 0 0 0 ] [ 5 3 3 2 13 ]</parameters>
+      <parameters>[ Id_Method_21_methodClass_1 Id_Method_22_methodClass_1 Id_Method_23_methodClass_1 Id_Method_24_methodClass_1 Id_Method_25_methodClass_1 ] [ 11 12 13 14 15 ] [ 0 0 0 0 0 ] [ 0 25 18 13 1 ]</parameters>
     </constraint>
     <constraint name="parMeth_ownedParameter" arity="5" scope="Id_Parameter_26_parMeth_1 Id_Parameter_27_parMeth_1 Id_Parameter_28_parMeth_1 Id_Parameter_29_parMeth_1 Id_Parameter_30_parMeth_1 " reference="global:globalCardinality">
       <parameters>[ Id_Parameter_26_parMeth_1 Id_Parameter_27_parMeth_1 Id_Parameter_28_parMeth_1 Id_Parameter_29_parMeth_1 Id_Parameter_30_parMeth_1 ] [ 21 22 23 24 25 ] [ 0 0 0 0 0 ] [ 1 1 1 1 1 ]</parameters>
