@@ -187,7 +187,6 @@ GAIncrementalGA::initialize(unsigned int seed)
 void
 GAIncrementalGA::step()
 {
-	std::cout << "incr" << std::endl;
   int mut, c1, c2;
   GAGenome *mom, *dad;          // tmp holders for selected genomes
 

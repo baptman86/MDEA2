@@ -349,7 +349,6 @@ GADemeGA::initialize(unsigned int seed) {
 // entire genetic algorithm run.
 void
 GADemeGA::step() {
-	std::cout << "Dem" << std::endl;
   int i, mut, c1, c2;
   GAGenome *mom, *dad;
   float pc;

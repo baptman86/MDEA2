@@ -283,7 +283,6 @@ GASteadyStateGA::step()
 // Generate the individuals in the temporary population from individuals in 
 // the main population.
 
-std::cout << "steady" << std::endl;
 
   for(i=0; i<tmpPop->size()-1; i+=2){	// takes care of odd population
     mom = &(pop->select());  
@@ -350,5 +349,4 @@ std::cout << "steady" << std::endl;
   stats.numrep += tmpPop->size();
 
   stats.update(*pop);		// update the statistics by one generation
-	std::cout << "3" << std::endl;
 }

@@ -1,0 +1,35 @@
+
+real	6m52.105s
+user	13m4.951s
+sys	1m26.983s
+nt generation
+0	# current convergence
+0	# number of selections since initialization
+250	# number of crossovers since initialization
+270	# number of mutations since initialization
+0	# number of replacements since initialization
+50	# number of genome evaluations since initialization
+0	# number of population evaluations since initialization
+0.0066016	# maximum score since initialization
+0	# minimum score since initialization
+0.00279082	# average of all scores ('on-line' performance)
+0.0056042	# average of maximum scores ('off-line' performance)
+0.00186333	# average of minimum scores ('off-line' performance)
+
+0.00087272	# mean score in initial population
+0.00194449	# maximum score in initial population
+0	# minimum score in initial population
+0.000651555	# standard deviation of initial population
+-1	# diversity of initial population (0=identical,-1=unset)
+
+0.00415008	# mean score in current population
+0.0066016	# maximum score in current population
+0.00284484	# minimum score in current population
+0.0012106	# standard deviation of current population
+-1	# diversity of current population (0=identical,-1=unset)
+
+100	# how far back to look for convergence
+1	# how often to record scores
+10	# how often to write scores to file
+scaffold-inter-centrality-avg-5-0.005-2-5/stat	# name of file to which scores are written
+

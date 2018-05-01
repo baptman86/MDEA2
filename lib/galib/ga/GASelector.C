@@ -117,25 +117,23 @@ GARouletteWheelSelector::update() {
   if(which == GASelectionScheme::RAW){
     if(pop->max() == pop->min()){
       for(i=0; i<n; i++)
-	psum[i] = (float)(i+1)/(float)n;	// equal likelihoods
+				psum[i] = (float)(i+1)/(float)n;	// equal likelihoods
     }
     else if((pop->max() > 0 && pop->min() >= 0) || (pop->max() <= 0 && pop->min() < 0)){
       pop->sort(gaFalse, GAPopulation::RAW);
       if(pop->order() == GAPopulation::HIGH_IS_BEST){
-	psum[0] = pop->individual(0, GAPopulation::RAW).score();
-	for(i=1; i<n; i++)
-	  psum[i] = pop->individual(i, GAPopulation::RAW).score() + psum[i-1];
-	for(i=0; i<n; i++)
-	  psum[i] /= psum[n-1];
+				psum[0] = pop->individual(0, GAPopulation::RAW).score();
+				for(i=1; i<n; i++)
+					psum[i] = pop->individual(i, GAPopulation::RAW).score() + psum[i-1];
+				for(i=0; i<n; i++)
+					psum[i] /= psum[n-1];
       }
       else{
-	psum[0] = -pop->individual(0, GAPopulation::RAW).score()
-	  + pop->max() + pop->min();
-	for(i=1; i<n; i++)
-	  psum[i] = -pop->individual(i, GAPopulation::RAW).score()
-	    + pop->max() + pop->min() + psum[i-1];
-	for(i=0; i<n; i++)
-	  psum[i] /= psum[n-1];
+				psum[0] = -pop->individual(0, GAPopulation::RAW).score() + pop->max() + pop->min();
+				for(i=1; i<n; i++)
+					psum[i] = -pop->individual(i, GAPopulation::RAW).score() + pop->max() + pop->min() + psum[i-1];
+				for(i=0; i<n; i++)
+					psum[i] /= psum[n-1];
       }
     }
     else {
@@ -147,27 +145,25 @@ GARouletteWheelSelector::update() {
   else{
     if(pop->fitmax() == pop->fitmin()){
       for(i=0; i<n; i++)
-	psum[i] = (float)(i+1)/(float)n;	// equal likelihoods
+			psum[i] = (float)(i+1)/(float)n;	// equal likelihoods
     }
-    else if((pop->fitmax() > 0 && pop->fitmin() >= 0) ||
-	    (pop->fitmax() <= 0 && pop->fitmin() < 0)){
+    else if((pop->fitmax() > 0 && pop->fitmin() >= 0) || (pop->fitmax() <= 0 && pop->fitmin() < 0)){
       pop->sort(gaFalse, GAPopulation::SCALED);
       if(pop->order() == GAPopulation::HIGH_IS_BEST){
-	psum[0] = pop->individual(0, GAPopulation::SCALED).fitness();
-	for(i=1; i<n; i++)
-	  psum[i] = pop->individual(i, GAPopulation::SCALED).fitness()
-	    + psum[i-1];
-	for(i=0; i<n; i++)
-	  psum[i] /= psum[n-1];
+				psum[0] = pop->individual(0, GAPopulation::SCALED).fitness();
+				for(i=1; i<n; i++)
+	  			psum[i] = pop->individual(i, GAPopulation::SCALED).fitness() + psum[i-1];
+				for(i=0; i<n; i++)
+	  			psum[i] /= psum[n-1];
       }
       else{
-	psum[0]= -pop->individual(0, GAPopulation::SCALED).fitness()
-	  + pop->fitmax() + pop->fitmin();
-	for(i=1; i<n; i++)
-	  psum[i] = -pop->individual(i, GAPopulation::SCALED).fitness() + 
-	    pop->fitmax() + pop->fitmin() + psum[i-1];
-	for(i=0; i<n; i++)
-	  psum[i] /= psum[n-1];
+				psum[0]= -pop->individual(0, GAPopulation::SCALED).fitness()
+					+ pop->fitmax() + pop->fitmin();
+				for(i=1; i<n; i++)
+					psum[i] = -pop->individual(i, GAPopulation::SCALED).fitness() + 
+						pop->fitmax() + pop->fitmin() + psum[i-1];
+				for(i=0; i<n; i++)
+					psum[i] /= psum[n-1];
       }
     }
     else {

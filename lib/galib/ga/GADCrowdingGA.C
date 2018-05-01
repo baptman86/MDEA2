@@ -24,8 +24,7 @@ GADCrowdingGA::initialize(unsigned int seed)
 }
 
 void
-GADCrowdingGA::step() { 
-	std::cout << "crowding" << std::endl;
+GADCrowdingGA::step() {
   if(pop->size() == 0) return;
 
   GAGenome *child = pop->individual(0).clone();
