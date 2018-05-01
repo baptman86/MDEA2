@@ -89,7 +89,6 @@ struct37 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct37 [shape=record,label="{E37:Edge| weight=0 \n}"];
 struct1 -- struct37 [arrowtail=diamond,arrowhead=none,dir=both];
 struct38 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
-struct38 -- struct17 [arrowhead=open,arrowtail=open,dir=both,label="EVout"]   ;
 struct38 [shape=record,label="{E38:Edge| weight=0 \n}"];
 struct1 -- struct38 [arrowtail=diamond,arrowhead=none,dir=both];
 struct39 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;

@@ -94,12 +94,10 @@ struct1 -- struct38 [arrowtail=diamond,arrowhead=none,dir=both];
 struct39 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct39 [shape=record,label="{E39:Edge| weight=0 \n}"];
 struct1 -- struct39 [arrowtail=diamond,arrowhead=none,dir=both];
-struct40 -- struct5 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
-struct40 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVout"]   ;
+struct40 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct40 [shape=record,label="{E40:Edge| weight=0 \n}"];
 struct1 -- struct40 [arrowtail=diamond,arrowhead=none,dir=both];
-struct41 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
-struct41 -- struct9 [arrowhead=open,arrowtail=open,dir=both,label="EVout"]   ;
+struct41 -- struct3 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct41 [shape=record,label="{E41:Edge| weight=0 \n}"];
 struct1 -- struct41 [arrowtail=diamond,arrowhead=none,dir=both];
 } 

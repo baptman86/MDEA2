@@ -83,7 +83,6 @@ struct35 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct35 [shape=record,label="{E35:Edge| weight=0 \n}"];
 struct1 -- struct35 [arrowtail=diamond,arrowhead=none,dir=both];
 struct36 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
-struct36 -- struct6 [arrowhead=open,arrowtail=open,dir=both,label="EVout"]   ;
 struct36 [shape=record,label="{E36:Edge| weight=0 \n}"];
 struct1 -- struct36 [arrowtail=diamond,arrowhead=none,dir=both];
 struct37 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;

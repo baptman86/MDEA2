@@ -77,7 +77,6 @@ struct33 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct33 [shape=record,label="{E33:Edge| weight=0 \n}"];
 struct1 -- struct33 [arrowtail=diamond,arrowhead=none,dir=both];
 struct34 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
-struct34 -- struct4 [arrowhead=open,arrowtail=open,dir=both,label="EVout"]   ;
 struct34 [shape=record,label="{E34:Edge| weight=0 \n}"];
 struct1 -- struct34 [arrowtail=diamond,arrowhead=none,dir=both];
 struct35 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
@@ -98,7 +97,8 @@ struct1 -- struct39 [arrowtail=diamond,arrowhead=none,dir=both];
 struct40 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
 struct40 [shape=record,label="{E40:Edge| weight=0 \n}"];
 struct1 -- struct40 [arrowtail=diamond,arrowhead=none,dir=both];
-struct41 -- struct2 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
+struct41 -- struct4 [arrowhead=open,arrowtail=open,dir=both,label="EVin"]   ;
+struct41 -- struct6 [arrowhead=open,arrowtail=open,dir=both,label="EVout"]   ;
 struct41 [shape=record,label="{E41:Edge| weight=0 \n}"];
 struct1 -- struct41 [arrowtail=diamond,arrowhead=none,dir=both];
 } 
