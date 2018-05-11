@@ -150,6 +150,8 @@ class Model {
    * \return The levenshtein distance between the two models.
    */
   static float levenshteinDistance(const Model& m1,const Model& m2);
+  
+  std::string generateDotFileScaffold(std::string fileName, std::string outputDir);
 
   /**
    * Check if the Model is a valid model or not.

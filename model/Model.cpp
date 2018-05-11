@@ -440,6 +440,67 @@ bool Model::isValid() const {
   return ret;
 }
 
+const std::vector<std::string> explode(const std::string& s, const char& c)
+{
+	std::string buff{""};
+	std::vector<std::string> v;
+	
+	for(auto n:s)
+	{
+		if(n != c) buff+=n; else
+		if(n == c && buff != "") { v.push_back(buff); buff = ""; }
+	}
+	if(buff != "") v.push_back(buff);
+	
+	return v;
+}
+
+std::string Model::generateDotFileScaffold(std::string fileName, std::string outputDir){
+	pugi::xml_document doc;
+  doc.load_file(xcsp.c_str());
+  auto inst = doc.child("instance");
+  auto variables = inst.select_nodes("//variable");
+  GenesPtr genVal = this->getVal();
+  std::string outputPath = outputDir+"/"+fileName;
+  std::ofstream output(outputPath);
+  output << "digraph mon_graphe {" << std::endl;
+  
+  bool trio = false;
+  std::string line;
+  int i = 0;
+  
+  for(auto var : variables){
+  	std::string v = var.node().attribute("name").value();
+  	std::vector<std::string> vector{explode(v, '_')};
+  	if(!vector.empty()){
+  		if(vector.at(3) == "vertices"){
+  			output << std::stoi(vector.at(4)) << std::endl;
+  		}
+  		if(vector.at(0) == "F" && vector.at(1) == "Edge"){
+				trio = true;
+  		}
+  		else{
+  			if(trio){
+  				int gen = (*(genVal.get()))[i];
+  				if(vector.at(3) == "EVin"){
+						line = std::to_string(gen) + " -> ";
+  				}
+  				if(vector.at(3) == "EVout"){
+  					if(!(gen == 2 && line[0] == '2')){
+  						output << line + std::to_string(gen) << std::endl;
+  					}
+  					trio = false;
+  				}
+				}
+  		}
+  	}
+  	i++;
+  }
+  output << "}";
+  output.close();
+  return "";
+}
+
 /* Comparison operators */
 
 bool Model::operator==(const Model& b) {

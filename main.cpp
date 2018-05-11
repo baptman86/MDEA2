@@ -206,6 +206,7 @@ int main(int argc, char* argv[]) {
   if(frequency==0){
   	ga.generateDotGen(opt->at("-in"),NSGAII::dir+"/output/gen"+std::to_string(NSGAII::maxGen),NSGAII::dir+"/output/dotgen"+std::to_string(NSGAII::maxGen));
   }
+  
 
   // print out the results
   cout << ga.statistics() << endl;

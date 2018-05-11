@@ -325,7 +325,7 @@
 			<parameters>2 Id_Edge_28_EVin_1</parameters>
 		</constraint>
 		<constraint name="Id_Edge_28_EVout_1_val" arity="1" scope="Id_Edge_28_EVout_1" reference="eq">
-			<parameters>2 Id_Edge_28_EVout_1</parameters>
+			<parameters>20 Id_Edge_28_EVout_1</parameters>
 		</constraint>
 		<constraint name="F_Edge_29_weight_val" arity="1" scope="F_Edge_29_weight" reference="eq">
 			<parameters>0 F_Edge_29_weight</parameters>
@@ -439,10 +439,10 @@
 			<parameters>0 F_Edge_41_weight</parameters>
 		</constraint>
 		<constraint name="Id_Edge_41_EVin_1_val" arity="1" scope="Id_Edge_41_EVin_1" reference="eq">
-			<parameters>2 Id_Edge_41_EVin_1</parameters>
+			<parameters>3 Id_Edge_41_EVin_1</parameters>
 		</constraint>
 		<constraint name="Id_Edge_41_EVout_1_val" arity="1" scope="Id_Edge_41_EVout_1" reference="eq">
-			<parameters>4 Id_Edge_41_EVout_1</parameters>
+			<parameters>2 Id_Edge_41_EVout_1</parameters>
 		</constraint>
 	</constraints>
 </instance>
