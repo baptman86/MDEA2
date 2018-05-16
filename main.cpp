@@ -85,6 +85,8 @@ int main(int argc, char* argv[]) {
     pm = 1; // TODO: Do not hardcode this value.
   }
   
+
+  
   if(opt->at("-cx") == "intra") // Are the crossover intra?
     GAChromosom::crossover = GAChromosom::Cross::INTRA;
 
@@ -102,6 +104,8 @@ int main(int argc, char* argv[]) {
   auto mut = 0.f;
   if(opt->at("-m") != "")
     mut = std::stof(opt->at("-m"));
+    
+
 
   // Number of generations
   NSGAII::maxGen = 100;
@@ -133,8 +137,10 @@ int main(int argc, char* argv[]) {
   }
   
   
+  
   // Input population
   auto pop = Population(opt->at("-in"));
+  
 
   //output directory
   if (opt->at("-out") != "")
@@ -144,6 +150,7 @@ int main(int argc, char* argv[]) {
     dir << "output-"+opt->at("-in") << "-" << opt->at("-cx") << "-" << opt->at("-dist") << "-" << opt->at("-fitness") << "-" << opt->at("-g") << "-" << opt->at("-m") << "-" << opt->at("-nb");
     NSGAII::dir = dir.str();
   }
+  
   
   system(("rm -rf "+NSGAII::dir).c_str());
   mkdir(NSGAII::dir.c_str(),0777);
@@ -159,6 +166,7 @@ int main(int argc, char* argv[]) {
     pop.evaluate();
   else
     pop.popEvaluate();
+    
   
   // Initialize algorithm
   GAChromosom genome;

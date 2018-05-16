@@ -21,11 +21,12 @@ Population::Population() {}
 
 Population::Population(std::string dirPath): Population() {
   Directory d(dirPath);
+  
 
   int nbt = d.getNbFiles(".chr");
 
   //doesnt use all model if (nbt % Chromosom::getNbModels() != 0)
-  int nbFilesUsed = nbt;// - (nbt % Chromosom::getNbModels());
+  int nbFilesUsed = nbt - (nbt % Chromosom::getNbModels());
   
   //force use of all model
   /*if(d.getNbFiles(".chr") % Chromosom::getNbModels() != 0) {
@@ -36,6 +37,7 @@ Population::Population(std::string dirPath): Population() {
   
   auto t = d.getFiles(".chr");
   
+  
   int i=0;
   while(i<nbFilesUsed){
     std::vector<std::string> tmp;
@@ -45,6 +47,7 @@ Population::Population(std::string dirPath): Population() {
     this->newChromosom(tmp);
     i += Chromosom::getNbModels();
   }
+  
 }
 
 inline void Population::newChromosom(const std::vector<std::string>& files) {
