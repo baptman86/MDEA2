@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
   cl.addOption("-g","-g <number of generations>",false);
   cl.addOption("-cx","-cx <inter|intra>",false);
   cl.addOption("-fitness","-fitness <min|avg|minavg|minavgs|dist>",false);
-  cl.addOption("-freq","<dot files generation frequency in addition to the last generation, 0 = only last generation>, -1 = no generation",false);
+  cl.addOption("-freq","-freq <dot files generation frequency in addition to the last generation, 0 = only last generation>, -1 = no generation",false);
 
   /* Parse CLI input */
   auto opt = cl.parse(argc,argv);

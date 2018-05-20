@@ -484,7 +484,7 @@ void NSGAII::generateDotGen(std::string metaModelDir, std::string genFile, std::
 			            output.close();
 									Model m(outputPath);
 									
-									std::string dotFilePath = m.generateDotFileScaffold(std::string("c")+std::to_string(vectorNumber).c_str()+".dot",outputDir);
+									std::string dotFilePath = m.generateDotFileScaffold(outputDir+"/c"+std::to_string(vectorNumber).c_str()+".dot");
 									//std::string dotFilePath = m.generateDotFile(0);
 									//std::string rawfileName = dotFilePath.substr(dotFilePath.find("/"),dotFilePath.length());
 									//system(("mv "+dotFilePath+" "+outputDir).c_str());

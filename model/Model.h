@@ -151,7 +151,7 @@ class Model {
    */
   static float levenshteinDistance(const Model& m1,const Model& m2);
   
-  std::string generateDotFileScaffold(std::string fileName, std::string outputDir);
+  std::string generateDotFileScaffold(std::string fileName);
 
   /**
    * Check if the Model is a valid model or not.

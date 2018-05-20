@@ -455,14 +455,13 @@ const std::vector<std::string> explode(const std::string& s, const char& c)
 	return v;
 }
 
-std::string Model::generateDotFileScaffold(std::string fileName, std::string outputDir){
+std::string Model::generateDotFileScaffold(std::string fileName){
 	pugi::xml_document doc;
   doc.load_file(xcsp.c_str());
   auto inst = doc.child("instance");
   auto variables = inst.select_nodes("//variable");
   GenesPtr genVal = this->getVal();
-  std::string outputPath = outputDir+"/"+fileName;
-  std::ofstream output(outputPath);
+  std::ofstream output(fileName);
   output << "digraph mon_graphe {" << std::endl;
   
   bool trio = false;
