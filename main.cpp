@@ -206,7 +206,7 @@ int main(int argc, char* argv[]) {
   
   if(frequency>0){
 		for(int i =1; i<=NSGAII::maxGen; i++){
-			if((i % (std::stoi(opt->at("-freq")))==0) || NSGAII::gen==NSGAII::maxGen){
+			if((i % (std::stoi(opt->at("-freq")))==0) || i==NSGAII::maxGen){
 				ga.generateDotGen(opt->at("-in"),NSGAII::dir+"/output/gen"+std::to_string(i),NSGAII::dir+"/output/dotgen"+std::to_string(i));
 			}
 		}

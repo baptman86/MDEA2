@@ -448,21 +448,31 @@ void NSGAII::step() {
 
 
 void NSGAII::generateDotGen(std::string metaModelDir, std::string genFile, std::string outputDir){
+		//récupération du fichier genX, output de mdea, contenant les vecteurs des individus
 	  std::ifstream file(genFile);
+	  //si on a pu ouvrir le fichier
 	  if(file){
+	  		//initialisation des variables nécessaires au du parcours du fichier
 	      std::string line;
 	      int vectorNumber=0;
-
+				//boucle de parcours
 	      while(getline(file, line)){
+	      		//si la ligne commence par un entier, c'est donc un vecteur
 	          if(isdigit(line[0])){
+	          		//création du dossier d'output
 								mkdir(outputDir.c_str(),0777);
+								//création du fichier chr stockant les informations sur le modèle de l'individu
 	          		std::string outputPath = outputDir+"/c"+std::to_string(vectorNumber).c_str()+".chr";
 	              std::ofstream output(outputPath);
+	              //insertion du vecteur dans le fichier
 	              output << line << std::endl;
+	              //initialisation du chemin vers le fichier xcsp
 								std::string metaModel = metaModelDir+"/c"+std::to_string(vectorNumber)+".xml";
+								//initialisation des valeurs des attributs grimm, ecore et dir (ne sont pas utilisés dans ce contexte)
 								std::string grimm = "";
 								std::string ecore = "";
 								std::string dir = "";
+								//modification de ses variables en fonction du contexte scaffold/javasmall
 								if(metaModelDir == "scaffold"){
 									grimm = "Graph.grimm";
 									ecore = "ScaffoldGraph.ecore";
@@ -477,18 +487,25 @@ void NSGAII::generateDotGen(std::string metaModelDir, std::string genFile, std::
 									std::cout << "meta-model need to be scaffold or javasmall" << std::endl;
 								}
 								else{
+									//écriture dans le fichier
 									output << metaModel << std::endl;
 									output << grimm << std::endl;
 									output << ecore << std::endl;
 									output << dir << std::endl;
 			            output.close();
+			            //création du modèle à partir de ce fichier
 									Model m(outputPath);
 									
+									//lancement de la méthode générant les fichiers dot
 									std::string dotFilePath = m.generateDotFileScaffold(outputDir+"/c"+std::to_string(vectorNumber).c_str()+".dot");
+									//la suite du code est utile si on souhaite utiliser la méthode generateDotFile au lieu de generateDotFileScaffold
+									//les paramètres grimm, ecore et dir seront alors importants et un autre contexte que celui du scaffolding aussi
 									//std::string dotFilePath = m.generateDotFile(0);
 									//std::string rawfileName = dotFilePath.substr(dotFilePath.find("/"),dotFilePath.length());
+									//les fichiers étant générés dans le dossier dir il faut le déplacer vers le dossier souhaiter
 									//system(("mv "+dotFilePath+" "+outputDir).c_str());
 									
+									//le nom du fichier a était générer automatiquement et il faut le renommer
 									//std::string s0 = outputDir+"/"+rawfileName;
 									//std::string s1 = outputDir+"/c"+std::to_string(vectorNumber).c_str()+".dot";
 									

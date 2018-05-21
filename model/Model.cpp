@@ -122,7 +122,6 @@ DomainsPtr Model::getDomains() const {
 std::string Model::generateDotFile(int i) {
   if(!change) return dot;
   change = false;
-	//std::string outdirGen = NSGAII::dir+"/output/dotgen"+std::to_string(NSGAII::gen);
   std::string outfileChrono = NSGAII::dir+"/jvmconsuption/jvmconsuption"+std::to_string(NSGAII::gen);
 
   if(dot != "") {
@@ -456,39 +455,68 @@ const std::vector<std::string> explode(const std::string& s, const char& c)
 }
 
 std::string Model::generateDotFileScaffold(std::string fileName){
+	//récupération du xcsp lié au modèle
 	pugi::xml_document doc;
   doc.load_file(xcsp.c_str());
+  //parcours du xcsp jusqu'au noeud contenant les labels des variables
   auto inst = doc.child("instance");
   auto variables = inst.select_nodes("//variable");
-  GenesPtr genVal = this->getVal();
-  std::ofstream output(fileName);
-  output << "digraph mon_graphe {" << std::endl;
   
+  //récupération du vecteur contenant les valeurs des variables
+  GenesPtr genVal = this->getVal();
+  
+  //création du fichier output
+  std::ofstream output(fileName);
+  
+  //edition du fichier
+  output << "Graph mon_graphe{" << std::endl;
+  
+  //les arêtes sont représentés par un ensemble de 3 données il faut identifier quand on est en train de gérer un trio ou non
   bool trio = false;
+  
+  //stock le poid de l'arête en cours de traitement
+  int weight = 0;
+  
+  //la ligne en construction
   std::string line;
+  
+  //indice de la variable en cours de traitement
   int i = 0;
   
   for(auto var : variables){
-  	std::string v = var.node().attribute("name").value();
-  	std::vector<std::string> vector{explode(v, '_')};
+  	//récupération du label de la variable
+  	std::string val = var.node().attribute("name").value();
+  	//parser le label
+  	std::vector<std::string> vector{explode(val, '_')};
   	if(!vector.empty()){
+  		//si le label indique un noeud
   		if(vector.at(3) == "vertices"){
+  			//ajout au fichier
   			output << std::stoi(vector.at(4)) << std::endl;
   		}
-  		if(vector.at(0) == "F" && vector.at(1) == "Edge"){
+  		//si le label indique une arête et est le premier d'un triplet de valeur (weight)
+  		if(vector.at(1) == "Edge" && vector.at(3) == "weight"){
+  			//récupération du point de l'arête
+  			weight = (*(genVal.get()))[i];
 				trio = true;
   		}
   		else{
+  			//si on est en train de traiter un triplet
   			if(trio){
+  				//on récupére la valeur associée
   				int gen = (*(genVal.get()))[i];
+  				//si c'est le noeud point de départ
   				if(vector.at(3) == "EVin"){
 						line = std::to_string(gen) + " -> ";
   				}
+  				//si c'est le noeud d'arrivé
   				if(vector.at(3) == "EVout"){
-  					if(!(gen == 2 && line[0] == '2')){
-  						output << line + std::to_string(gen) << std::endl;
-  					}
-  					trio = false;
+  					if(weight > 0){
+							output << line + std::to_string(gen) + "[label=\""+std::to_string(weight)+"\",weight=\"" + std::to_string(weight) + "\"];" << std::endl;
+						}
+						//réinitialisation du poid
+						weight = 0;
+						trio = false;
   				}
 				}
   		}
